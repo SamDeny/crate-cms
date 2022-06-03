@@ -1,0 +1,62 @@
+{
+    "name": "crate/cms",
+    "type": "project",
+    "description": "A headless API-driven content management system, based on Cockpit.",
+    "keywords": [
+        "cms",
+        "content",
+        "headless",
+        "api",
+        "cockpit"
+    ],
+    "homepage": "https://crate.md",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "rat.md",
+            "email": "info@crate.md",
+            "role": "Developer"
+        },
+        {
+            "name": "Artur Heinze",
+            "email": "artur@agentejo.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0.0",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "crate/citrus": "@dev",
+        "league/csv": "^9.8.0",
+        "php-di/php-di": "^6.4.0",
+        "phpmailer/phpmailer": "^6.5.0",
+        "psr/cache": "^3.0.0"
+    },
+    "suggest": {
+        "php-di/php-di": "The dependency injection container for humans."
+    },
+    "autoload": {
+        "psr-4": {
+            "Crate\\": "core/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "scripts": {
+        "local": "php -S 127.0.0.1:8000 -t ./public"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../vendor/Citrus",
+            "options": {
+                "symlink": true
+            }
+        }
+    ]
+}

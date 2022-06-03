@@ -1,0 +1,20 @@
+#
+#   Ignore Base
+#
+.vscode
+node_modules
+vendor
+- old
+npm-debug.log
+yarn-error.log
+
+#
+#   Ignore Application-Related
+#
+modules/*
+!modules/welcome
+!modules/.gitempty
+storage/*/*
+!storage/*/.gitempty
+storage/*.*
+.env

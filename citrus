@@ -1,0 +1,44 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * Citrus CLI Mode
+ * ---
+ * The Citrus Application Framework supports the executed from within the 
+ * command line interface. In Fact, we do almost the same here as in the 
+ * public/index.php file, with just some basic tweaks.
+ */
+if (PHP_SAPI !== 'cli') {
+    die('This script can only be executed from the Command Line Interface (CLI).');
+}
+
+
+/**
+ * Require Autoloader
+ * ---
+ * Composer's autoloader ensures that all required dependencies / vendors are 
+ * loaded and available within the Request runtime. The only requirement is to 
+ * load composer's autoloader script.
+ */
+require_once __DIR__ . '/vendor/autoload.php';
+
+
+/**
+ * Bootstrap Application
+ * ---
+ * Now we need to bootstrap our Crate application using the core bootstrap file. 
+ * This file will instantiate and setup the whole Application envrionment and 
+ * allows you to use Crate as you please.
+ */
+require_once __DIR__ . '/core/bootstrap.php';
+
+
+/**
+ * Execute the Application
+ * ---
+ * After our both bootstrap codes has been executed, we can now finally execute 
+ * the Application. The difference between this and the run method is, that 
+ * execute parses the CLI arguments and pass them directly to the Console class, 
+ * while run creates a ServerRequest using the ServerRequestFactory.
+ */
+$crate->execute();
