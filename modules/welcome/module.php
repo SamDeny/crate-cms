@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-use Crate\Extensions\ModuleRegistry;
+use Crate\Classes\ModuleRegistry;
 
 /**
  * Register Module

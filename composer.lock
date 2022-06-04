@@ -4,20 +4,110 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f94f4c4644b87f29bfb2458a06816411",
+    "content-hash": "ba8bac5ac940d7f76c3de0ca5552dedf",
     "packages": [
         {
+            "name": "crate/backend",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "../modules/Backend",
+                "reference": "7c91eaadb3be058be06358c909f52f3c48792c44"
+            },
+            "require": {
+                "crate/core": "^0.1.0",
+                "league/csv": "^9.8.0",
+                "php": "^8.0.0",
+                "phpmailer/phpmailer": "^6.5.0"
+            },
+            "type": "crate-module",
+            "autoload": {
+                "psr-4": {
+                    "Crate\\Backend\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "rat.md",
+                    "email": "info@crate.md",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The official administration and management backend module for the Crate CMS.",
+            "homepage": "https://crate.md/module/@crate/backend",
+            "keywords": [
+                "admin",
+                "administration",
+                "backend",
+                "cms",
+                "crate",
+                "module"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "crate/channels",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "../modules/Channels",
+                "reference": "0ed8f223de9a5d666d362900b509f72cd17d40b7"
+            },
+            "require": {
+                "crate/core": "^0.1.0",
+                "php": "^8.0.0"
+            },
+            "type": "crate-module",
+            "autoload": {
+                "psr-4": {
+                    "Crate\\Channels\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "rat.md",
+                    "email": "info@crate.md",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The official distribution channels module for the Crate CMS.",
+            "homepage": "https://crate.md/module/@crate/channels",
+            "keywords": [
+                "channel",
+                "channels",
+                "cms",
+                "crate",
+                "distribution",
+                "module"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
             "name": "crate/citrus",
-            "version": "dev-main",
+            "version": "0.1.0",
             "dist": {
                 "type": "path",
                 "url": "../vendor/Citrus",
-                "reference": "70cb90fa625fd3dac84586f969acdda88ca938ad"
+                "reference": "3d75204595987a05e056831f0cc1a1dfdc0e3b64"
             },
             "require": {
                 "ext-json": "*",
                 "ext-mbstring": "*",
                 "php": "^8.0.0",
+                "php-di/php-di": "^6.4.0",
+                "psr/cache": "^3.0.0",
                 "psr/container": "^1.0.0",
                 "psr/event-dispatcher": "^1.0.0",
                 "psr/http-message": "^1.0.1",
@@ -61,6 +151,256 @@
                 "psr",
                 "router",
                 "routing"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "crate/collections",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "../modules/Collections",
+                "reference": "1ddd0dd989161dd98f57f696088196026426a5dc"
+            },
+            "require": {
+                "crate/core": "^0.1.0",
+                "php": "^8.0.0"
+            },
+            "type": "crate-module",
+            "autoload": {
+                "psr-4": {
+                    "Crate\\Collections\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "rat.md",
+                    "email": "info@crate.md",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The official content collection management module for the Crate CMS.",
+            "homepage": "https://crate.md/module/@crate/collections",
+            "keywords": [
+                "cms",
+                "collection",
+                "content",
+                "crate",
+                "data",
+                "module",
+                "storage"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "crate/composer",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "../vendor/Composer",
+                "reference": "084822ce233c12b86bccf1db69cd90d51e6dc1bd"
+            },
+            "require": {
+                "composer-plugin-api": "^2.0"
+            },
+            "require-dev": {
+                "composer/composer": "^2.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Crate\\Composer\\ModuleInstallerPlugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Crate\\Composer\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "crate/core",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "../modules/Core",
+                "reference": "a8807cad9de42b26ff8750942950d340c11631f4"
+            },
+            "require": {
+                "crate/citrus": "0.1.0",
+                "crate/composer": "^0.1.0",
+                "php": "^8.0.0"
+            },
+            "type": "crate-module",
+            "autoload": {
+                "psr-4": {
+                    "Crate\\Core\\": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "rat.md",
+                    "email": "info@crate.md",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The core system and primary connection to the underlying Citrus Application Framework for the Crate CMS.",
+            "homepage": "https://crate.md/module/@crate/core",
+            "keywords": [
+                "cms",
+                "core",
+                "crate",
+                "module"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "crate/forms",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "../modules/Forms",
+                "reference": "9b8023429be0bde3255867e21c0203682175eb45"
+            },
+            "require": {
+                "crate/core": "^0.1.0",
+                "php": "^8.0.0"
+            },
+            "type": "crate-module",
+            "autoload": {
+                "psr-4": {
+                    "Crate\\Forms\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "rat.md",
+                    "email": "info@crate.md",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The official forms and user data management module for the Crate CMS.",
+            "homepage": "https://crate.md/module/@crate/forms",
+            "keywords": [
+                "crate",
+                "crate",
+                "formdata",
+                "forms",
+                "input",
+                "module"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "crate/frontend",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "../modules/Frontend",
+                "reference": "93ee8c891eaf46ceb830954dca51123f40c9bf8a"
+            },
+            "require": {
+                "crate/core": "^0.1.0",
+                "php": "^8.0.0"
+            },
+            "type": "crate-module",
+            "autoload": {
+                "psr-4": {
+                    "Crate\\Frontend\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "rat.md",
+                    "email": "info@crate.md",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The official frontend management and templating interface module for the Crate CMS.",
+            "homepage": "https://crate.md/module/@crate/frontend",
+            "keywords": [
+                "cms",
+                "crate",
+                "frontend",
+                "module",
+                "template",
+                "templating",
+                "website"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "crate/singletons",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "../modules/Singletons",
+                "reference": "a67c7615426a0aec443f94607307b35403bd9d73"
+            },
+            "require": {
+                "crate/core": "^0.1.0",
+                "php": "^8.0.0"
+            },
+            "type": "crate-module",
+            "autoload": {
+                "psr-4": {
+                    "Crate\\Singletons\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "rat.md",
+                    "email": "info@crate.md",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The official Singletons, Single Content management module for the Crate CMS.",
+            "homepage": "https://crate.md/module/@crate/frontend",
+            "keywords": [
+                "cms",
+                "content",
+                "crate",
+                "module",
+                "singleton",
+                "singletons"
             ],
             "transport-options": {
                 "symlink": true,
@@ -829,9 +1169,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "crate/citrus": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
