@@ -23,21 +23,21 @@
         "php": "^8.0.0",
         "crate/citrus": "^0.1.0",
         "crate/composer": "^0.1.0",
-        "crate/core": "^0.1.0"
+        "crate/core": "^0.1.0",
+        "crate/channels": "^0.1.0",
+        "crate/collections": "^0.1.0",
+        "crate/backend": "^0.1.0",
+        "crate/singletons": "^0.1.0",
+        "crate/forms": "^0.1.0",
+        "mongodb/mongodb": "^1.12.0"
     },
     "scripts": {
         "local": "php -S 127.0.0.1:8000 -t ./public"
-    },
-    "autoload": {
-        "psr-4": {
-            "Crate\\": "crate/"
-        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
         "optimize-autoloader": true,
-        "sort-packages": true,
         "allow-plugins": {
             "crate/composer": true
         }

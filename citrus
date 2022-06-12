@@ -41,4 +41,4 @@ require_once __DIR__ . '/crate/bootstrap.php';
  * execute parses the CLI arguments and pass them directly to the Console class, 
  * while run creates a ServerRequest using the ServerRequestFactory.
  */
-$crate->execute();
+$citrus->execute();
