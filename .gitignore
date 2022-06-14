@@ -4,7 +4,6 @@
 .vscode
 node_modules
 vendor
-- old
 npm-debug.log
 yarn-error.log
 
@@ -18,3 +17,5 @@ storage/*/*
 !storage/*/.gitempty
 storage/*.*
 .env
+.env.*
+!.env.default

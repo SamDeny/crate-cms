@@ -8,6 +8,7 @@ website: https://crate.md.
 
 
 Version 0.2.0 - Alpha
-=====================
+---------------------
 
 -   Visual Setup / Upgrade Wizard (provided by @crate/core)
+-   `->removeListener` method on Citrus' EventManager? 

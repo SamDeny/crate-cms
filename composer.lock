@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "76a060808acfd5ebf134048f6d023537",
+    "content-hash": "12dd906222d55afb29b934704297b308",
     "packages": [
         {
             "name": "crate/backend",
@@ -12,7 +12,7 @@
             "dist": {
                 "type": "path",
                 "url": "../modules/Backend",
-                "reference": "1ad09b20d8601952d7b43cbdd1c96f594699b653"
+                "reference": "f152c7f9b6662062723b95594941e607c3563282"
             },
             "require": {
                 "crate/core": "^0.1.0",
@@ -99,7 +99,7 @@
             "dist": {
                 "type": "path",
                 "url": "../vendor/Citrus",
-                "reference": "22dca5a3df55ee51032fff186a1d8d1698af9583"
+                "reference": "c8f37269bc447be248a1cb6a8ac35035e919b65c"
             },
             "require": {
                 "ext-json": "*",
@@ -229,7 +229,7 @@
             "dist": {
                 "type": "path",
                 "url": "../modules/Core",
-                "reference": "6e80a36974c28848f82607023458e54f9f947cca"
+                "reference": "93614e631351890586b2db8b9aa713775b41eeef"
             },
             "require": {
                 "crate/citrus": "^0.1.0",
@@ -941,7 +941,96 @@
             "time": "2022-05-17T05:48:52+00:00"
         }
     ],
-    "packages-dev": [],
+    "packages-dev": [
+        {
+            "name": "symfony/var-dumper",
+            "version": "v6.0.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/var-dumper.git",
+                "reference": "ac81072464221e73ee994d12f0b8a2af4a9ed798"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/ac81072464221e73ee994d12f0b8a2af4a9ed798",
+                "reference": "ac81072464221e73ee994d12f0b8a2af4a9ed798",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0.2",
+                "symfony/polyfill-mbstring": "~1.0"
+            },
+            "conflict": {
+                "phpunit/phpunit": "<5.4.3",
+                "symfony/console": "<5.4"
+            },
+            "require-dev": {
+                "ext-iconv": "*",
+                "symfony/console": "^5.4|^6.0",
+                "symfony/process": "^5.4|^6.0",
+                "symfony/uid": "^5.4|^6.0",
+                "twig/twig": "^2.13|^3.0.4"
+            },
+            "suggest": {
+                "ext-iconv": "To convert non-UTF-8 strings to UTF-8 (or symfony/polyfill-iconv in case ext-iconv cannot be used).",
+                "ext-intl": "To show region name in time zone dump",
+                "symfony/console": "To use the ServerDumpCommand and/or the bin/var-dump-server script"
+            },
+            "bin": [
+                "Resources/bin/var-dump-server"
+            ],
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "Resources/functions/dump.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Component\\VarDumper\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides mechanisms for walking through any arbitrary PHP variable",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "debug",
+                "dump"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/var-dumper/tree/v6.0.9"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-05-21T13:33:31+00:00"
+        }
+    ],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": [],

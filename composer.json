@@ -106,5 +106,8 @@
                 "symlink": true
             }
         }
-    ]
+    ],
+    "require-dev": {
+        "symfony/var-dumper": "^6.0"
+    }
 }
