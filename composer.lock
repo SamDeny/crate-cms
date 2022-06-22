@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "12dd906222d55afb29b934704297b308",
+    "content-hash": "d1b56c01f24ee28204fe22f1631482d7",
     "packages": [
         {
             "name": "crate/backend",
@@ -12,12 +12,13 @@
             "dist": {
                 "type": "path",
                 "url": "../modules/Backend",
-                "reference": "f152c7f9b6662062723b95594941e607c3563282"
+                "reference": "28e259375cc21d26d3b56f4df2bac72246e8e549"
             },
             "require": {
                 "crate/core": "^0.1.0",
                 "php": "^8.0.0",
-                "twig/twig": "^3.0"
+                "twig/intl-extra": "^3.4",
+                "twig/twig": "^3.4"
             },
             "type": "crate-module",
             "autoload": {
@@ -56,7 +57,7 @@
             "dist": {
                 "type": "path",
                 "url": "../modules/Channels",
-                "reference": "4136503ffc7338668d499fa8984aa0ade3c2af26"
+                "reference": "df36ecaeddd05204ea9a30f8847cf5598fdb6c5c"
             },
             "require": {
                 "crate/core": "^0.1.0",
@@ -99,7 +100,7 @@
             "dist": {
                 "type": "path",
                 "url": "../vendor/Citrus",
-                "reference": "c8f37269bc447be248a1cb6a8ac35035e919b65c"
+                "reference": "d8db16a558c1f3c6a4522663d7c78c5ed092bac8"
             },
             "require": {
                 "ext-json": "*",
@@ -154,7 +155,7 @@
             "dist": {
                 "type": "path",
                 "url": "../modules/Collections",
-                "reference": "76b8a13811983a9060ebecccde21765990b87454"
+                "reference": "1a9bf1d8a235dfe9a98c2f50e91111d0f2fd6dae"
             },
             "require": {
                 "crate/core": "^0.1.0",
@@ -229,7 +230,7 @@
             "dist": {
                 "type": "path",
                 "url": "../modules/Core",
-                "reference": "93614e631351890586b2db8b9aa713775b41eeef"
+                "reference": "37550904b9791828e162097e78494f14ad9cf971"
             },
             "require": {
                 "crate/citrus": "^0.1.0",
@@ -279,7 +280,7 @@
             "dist": {
                 "type": "path",
                 "url": "../modules/Forms",
-                "reference": "14b5f3fab9c981ffeca9508026a5da79a048f272"
+                "reference": "60a969c9c825c7d0f1c1ebd4fe404432c9453f78"
             },
             "require": {
                 "crate/core": "^0.1.0",
@@ -322,7 +323,7 @@
             "dist": {
                 "type": "path",
                 "url": "../modules/Singletons",
-                "reference": "c6857f1cb7328005ccafd75205df04c000c977b4"
+                "reference": "a518a115104e2022bce8729918ba5414df59c4f9"
             },
             "require": {
                 "crate/core": "^0.1.0",
@@ -353,6 +354,51 @@
                 "module",
                 "singleton",
                 "singletons"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "crate/view",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "../modules/View",
+                "reference": "0adb5e83227f746729a8ff91222464431a70ba8d"
+            },
+            "require": {
+                "crate/core": "^0.1.0",
+                "php": "^8.0.0",
+                "twig/twig": "^3.0"
+            },
+            "type": "crate-module",
+            "autoload": {
+                "psr-4": {
+                    "Crate\\View\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "rat.md",
+                    "email": "info@crate.md",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The basic view module for the Crate CMS, providing an Assets and TWIG templating handler.",
+            "homepage": "https://crate.md/module/@crate/view",
+            "keywords": [
+                "assets",
+                "cms",
+                "crate",
+                "module",
+                "templating",
+                "twig",
+                "view"
             ],
             "transport-options": {
                 "symlink": true,
@@ -541,6 +587,86 @@
                 "source": "https://github.com/php-ds/polyfill/tree/v1.4.1"
             },
             "time": "2022-03-09T20:39:30+00:00"
+        },
+        {
+            "name": "symfony/intl",
+            "version": "v6.0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/intl.git",
+                "reference": "2ef7cb9af5ad4c3e2d7674326982366ad9dfef86"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/intl/zipball/2ef7cb9af5ad4c3e2d7674326982366ad9dfef86",
+                "reference": "2ef7cb9af5ad4c3e2d7674326982366ad9dfef86",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0.2"
+            },
+            "require-dev": {
+                "symfony/filesystem": "^5.4|^6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Intl\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bernhard Schussek",
+                    "email": "bschussek@gmail.com"
+                },
+                {
+                    "name": "Eriksen Costa",
+                    "email": "eriksen.costa@infranology.com.br"
+                },
+                {
+                    "name": "Igor Wiedler",
+                    "email": "igor@wiedler.ch"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides a PHP replacement layer for the C intl extension that includes additional data from the ICU library",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "i18n",
+                "icu",
+                "internationalization",
+                "intl",
+                "l10n",
+                "localization"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/intl/tree/v6.0.8"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-04-12T16:11:42+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -863,6 +989,75 @@
                 }
             ],
             "time": "2022-01-26T17:23:29+00:00"
+        },
+        {
+            "name": "twig/intl-extra",
+            "version": "v3.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twigphp/intl-extra.git",
+                "reference": "8dca6f4c5a00cdd3c43b6bd080f50d32aca33a84"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twigphp/intl-extra/zipball/8dca6f4c5a00cdd3c43b6bd080f50d32aca33a84",
+                "reference": "8dca6f4c5a00cdd3c43b6bd080f50d32aca33a84",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.3",
+                "symfony/intl": "^4.4|^5.0|^6.0",
+                "twig/twig": "^2.7|^3.0"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "^4.4.9|^5.0.9|^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Twig\\Extra\\Intl\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
+                }
+            ],
+            "description": "A Twig extension for Intl",
+            "homepage": "https://twig.symfony.com",
+            "keywords": [
+                "intl",
+                "twig"
+            ],
+            "support": {
+                "source": "https://github.com/twigphp/intl-extra/tree/v3.4.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/twig/twig",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-01-02T10:02:25+00:00"
         },
         {
             "name": "twig/twig",

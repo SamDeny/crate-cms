@@ -2,7 +2,7 @@
     "name": "crate/cms",
     "type": "project",
     "version": "0.1.0",
-    "description": "A headless modular API-driven content management, inspired by Cockpit.",
+    "description": "A decoupled RESTful-API driven content management system, inspired by Cockpit.",
     "keywords": [
         "cms",
         "content",
@@ -29,6 +29,7 @@
         "crate/backend": "^0.1.0",
         "crate/singletons": "^0.1.0",
         "crate/forms": "^0.1.0",
+        "crate/view": "^0.1.0",
         "mongodb/mongodb": "^1.12.0"
     },
     "scripts": {
@@ -88,6 +89,13 @@
         {
             "type": "path",
             "url": "../modules/Singletons",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "../modules/View",
             "options": {
                 "symlink": true
             }
