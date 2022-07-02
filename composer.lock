@@ -12,13 +12,11 @@
             "dist": {
                 "type": "path",
                 "url": "../modules/Backend",
-                "reference": "28e259375cc21d26d3b56f4df2bac72246e8e549"
+                "reference": "8e139b6c0562d4ee31bc5534f31f19e5b7381d3e"
             },
             "require": {
                 "crate/core": "^0.1.0",
-                "php": "^8.0.0",
-                "twig/intl-extra": "^3.4",
-                "twig/twig": "^3.4"
+                "php": "^8.0.0"
             },
             "type": "crate-module",
             "autoload": {
@@ -100,20 +98,22 @@
             "dist": {
                 "type": "path",
                 "url": "../vendor/Citrus",
-                "reference": "d8db16a558c1f3c6a4522663d7c78c5ed092bac8"
+                "reference": "d37712480caf63bfa82bc007fbace5ed767b8d16"
             },
             "require": {
-                "ext-json": "*",
                 "ext-mbstring": "*",
                 "php": "^8.0.0",
                 "php-ds/php-ds": "^1.4",
+                "symfony/polyfill-mbstring": "^1.26.0",
+                "symfony/polyfill-uuid": "^1.26.0",
                 "symfony/yaml": "^6.0"
             },
             "require-dev": {
                 "symfony/var-dumper": "^6.0"
             },
             "suggest": {
-                "ext-ds": "Increase performance by using the DS extension instead of the polyfill."
+                "ext-ds": "Increase performance by using the DS extension instead of the polyfill.",
+                "ext-yaml": "Increase performance by using the native YAML extension instead of Symfony's package."
             },
             "type": "library",
             "autoload": {
@@ -130,20 +130,28 @@
             ],
             "authors": [
                 {
-                    "name": "rat.md",
-                    "email": "info@crate.md",
+                    "name": "Sam (rat.md)",
+                    "email": "sam@rat.md",
+                    "homepage": "https://rat.md",
                     "role": "Developer"
                 }
             ],
-            "description": "The main Application Framework behind our headless API-driven Crate CMS.",
+            "description": "The main Application Framework behind our decoupled RESTful-API-driven Crate CMS.",
             "homepage": "https://crate.md",
             "keywords": [
                 "application",
-                "framework",
-                "psr",
-                "router",
-                "routing"
+                "citrus",
+                "crate",
+                "framework"
             ],
+            "support": {
+                "email": "help@crate.md",
+                "issues": "https://github.com/CrateProject/Citrus/issues",
+                "forum": "https://crate.md/support/forum",
+                "wiki": "https://docs.crate.md/citrus",
+                "source": "https://github.com/CrateProject/Citrus",
+                "docs": "https://docs.crate.md/citrus"
+            },
             "transport-options": {
                 "symlink": true,
                 "relative": true
@@ -366,12 +374,13 @@
             "dist": {
                 "type": "path",
                 "url": "../modules/View",
-                "reference": "0adb5e83227f746729a8ff91222464431a70ba8d"
+                "reference": "1568f5f8b7674c077f56f5404de4538183ffd90b"
             },
             "require": {
                 "crate/core": "^0.1.0",
                 "php": "^8.0.0",
-                "twig/twig": "^3.0"
+                "twig/intl-extra": "^3.4",
+                "twig/twig": "^3.4"
             },
             "type": "crate-module",
             "autoload": {
@@ -915,6 +924,88 @@
                 }
             ],
             "time": "2022-05-10T07:21:04+00:00"
+        },
+        {
+            "name": "symfony/polyfill-uuid",
+            "version": "v1.26.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-uuid.git",
+                "reference": "a41886c1c81dc075a09c71fe6db5b9d68c79de23"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-uuid/zipball/a41886c1c81dc075a09c71fe6db5b9d68c79de23",
+                "reference": "a41886c1c81dc075a09c71fe6db5b9d68c79de23",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "provide": {
+                "ext-uuid": "*"
+            },
+            "suggest": {
+                "ext-uuid": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.26-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Uuid\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Grégoire Pineau",
+                    "email": "lyrixx@lyrixx.info"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for uuid functions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "uuid"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-uuid/tree/v1.26.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-05-24T11:49:31+00:00"
         },
         {
             "name": "symfony/yaml",
